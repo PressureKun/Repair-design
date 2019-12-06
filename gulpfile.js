@@ -18,19 +18,23 @@ const sass = require('gulp-sass');
 };
 
 
-function minify() {
-    src('src/**/*.css')
-    .pipe(cssmin())
-    .pipe(rename({ suffix: '.min' }))
-    .pipe(gulp.dest('dist'));
-};
+
 
 function serveSass() {
-  return src("./sass/*.sass")
+  return src("src/sass/*.sass")
     .pipe(sass())
-    .pipe(dest("./css"))
+    .pipe(dest("src/css"))
     .pipe(browserSync.stream());
 };
 
-exports.serve = bs;
+function minify() {
+  src('src/**/*.css')
+    .pipe(cssmin())
+    .pipe(rename({
+      suffix: '.min'
+    }))
+    .pipe(dest('dist'));
+};
+
 exports.min = minify;
+exports.serve = bs;
