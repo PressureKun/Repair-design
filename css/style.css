@@ -331,9 +331,15 @@ template {
   font-weight: 500;
   font-size: 13px;
   line-height: 15px; }
+  .button:hover {
+    cursor: pointer; }
   .button--primary {
     background-color: #E3B873;
-    color: #fff; }
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(227, 184, 115, 0.2);
+    transition: box-shadow 0.4s; }
+    .button--primary:hover {
+      box-shadow: none; }
   .button--outline {
     border: 1px solid #FFFFFF;
     color: #fff;
@@ -362,6 +368,9 @@ template {
   color: #fff;
   text-transform: uppercase;
   margin-right: 40px; }
+  .nav__link:hover {
+    color: #E3B873;
+    transition: 0.2s; }
 
 .phone {
   color: #E3B873;
@@ -374,11 +383,22 @@ template {
   position: relative;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
   padding-top: 100px;
   background: #131313 url("../img/hero-bg.jpg") no-repeat center/cover;
   height: 100vh;
   color: #fff; }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(19, 19, 19, 0.7); }
   .hero__content {
+    position: relative;
     max-width: 670px; }
   .hero__text {
     font-size: 22px;
@@ -404,6 +424,14 @@ template {
     text-transform: uppercase;
     text-decoration: none;
     color: #fff; }
+    .hero__scroll-down::after {
+      content: '';
+      background: url("../img/arrow.svg") no-repeat center;
+      width: 30px;
+      height: 30px;
+      border: 2px solid #E3B873;
+      border-radius: 50%;
+      margin-left: 12px; }
 
 .instagram {
   background-color: #131313;
@@ -411,10 +439,19 @@ template {
   align-items: center;
   justify-content: center; }
   .instagram__link {
+    display: flex;
+    align-items: center;
     color: #E3B873;
     text-transform: uppercase;
     text-decoration: none;
-    transform: rotate(90deg); }
+    transform: rotate(90deg);
+    line-height: 0.8; }
+    .instagram__link::after {
+      content: '';
+      width: 51px;
+      height: 1px;
+      background-color: #E3B873;
+      margin-left: 8px; }
 
 .title {
   margin: 0;
