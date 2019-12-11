@@ -379,7 +379,15 @@ body {
   top: 0;
   width: 100%;
   background-color: #131313;
-  padding: 24px 0; }
+  padding: 22px 0 21px 0;
+  font-size: 0.99rem; }
+  .header__container {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 80px;
+    padding-right: 103px;
+    width: 100%;
+    max-width: 100%; }
 
 .menu {
   display: flex;
@@ -388,16 +396,19 @@ body {
 
 .logo {
   color: #E3B873;
-  text-transform: uppercase; }
-
-.nav__link {
-  text-decoration: none;
-  color: #fff;
   text-transform: uppercase;
-  margin-right: 2.85rem; }
-  .nav__link:hover {
-    color: #E3B873;
-    transition: 0.2s; }
+  font-size: 1.075rem; }
+
+.nav {
+  margin-left: 16px; }
+  .nav__link {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    margin-right: 2.67rem; }
+    .nav__link:hover {
+      color: #E3B873;
+      transition: 0.2s; }
 
 .phone {
   color: #E3B873;
@@ -405,6 +416,9 @@ body {
 
 .contacts__phone {
   margin-right: 45px; }
+
+.contacts__button {
+  padding: 11px 22px; }
 
 .hero {
   position: relative;
