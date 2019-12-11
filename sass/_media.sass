@@ -1,9 +1,17 @@
-@media screen and (max-width: 1200px)
+@media screen and (max-width: 1280px)
   html
     font-size: 12px
   .nav
   &__link
     margin-right: 1rem
+
+@media screen and (max-width: 1120px)
+  .header
+    &__container
+      padding-right: 24px
+  .nav
+    &__link
+      margin-right: 2rem
 
 @media screen and (max-width: 992px)
   .nav
@@ -13,6 +21,7 @@
       display: none
     &__content
       margin-left: 0
+
 @media screen and (max-width: 570px)
   .container
    width: 100%
@@ -28,18 +37,27 @@
   .title
     font-size: 1.92rem
   .hero
-    padding-top: 85px
+    padding-top: 30px
     &__content    
       margin: 0 
       max-width: 28.17rem
     &__text
       font-size: 1.5rem
-    &__button
+    &__button-box
+      flex-wrap: wrap
+      
+    &__button_1
       display: block
       min-width: 100%
       margin-bottom: 2.17rem
+      font-size: 1.083rem
+    &__button_2
+      display: block
+      min-width: 100%
+      font-size: 1.083rem      
     &__scroll-down
       display: none
+      
 @media screen and ( max-height: 550px )
   .hero
     &__scroll-down
