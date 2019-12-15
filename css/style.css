@@ -313,21 +313,26 @@ body {
   font-family: 'Futura Book', sans-serif;
   font-size: 1rem; }
 
-.section-title {
-  text-align: center;
-  text-transform: uppercase;
-  font-family: 'Yeseva One', cursive; }
-  .section-title__image {
-    display: flex;
-    justify-content: center;
-    align-items: center; }
-    .section-title__image::before, .section-title__image::after {
-      content: '';
-      width: 32px;
-      height: 2px;
-      background-color: #E3B873;
-      margin-left: 7px;
-      margin-right: 7px; }
+img {
+  max-width: 100%; }
+
+.section {
+  padding: 60px 50px; }
+  .section-title {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Yeseva One', cursive; }
+    .section-title__image {
+      display: flex;
+      justify-content: center;
+      align-items: center; }
+      .section-title__image::before, .section-title__image::after {
+        content: '';
+        width: 32px;
+        height: 2px;
+        background-color: #E3B873;
+        margin-left: 7px;
+        margin-right: 7px; }
 
 @font-face {
   font-family: 'Futura Book';
@@ -469,7 +474,7 @@ body {
     justify-content: center;
     align-items: center;
     left: 0;
-    bottom: 0;
+    bottom: -2.2rem;
     min-width: 247px;
     min-height: 97px;
     background-color: #131313;
@@ -518,6 +523,62 @@ body {
   line-height: 3.8rem; }
   .title--primary {
     color: #E3B873; }
+
+.types__section-title {
+  margin-bottom: 2rem; }
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between; }
+
+.col {
+  flex-basis: 32%; }
+
+.card__text {
+  position: relative;
+  margin: 0 auto;
+  margin-top: -9.3rem;
+  background-color: #fff;
+  padding: 1.8rem 2.14rem;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03);
+  max-width: 23.6rem; }
+
+.card__title {
+  font-family: 'Yeseva One', cursive;
+  font-size: 1.29rem;
+  margin-top: 0;
+  margin-bottom: 0.7rem; }
+
+.card__list {
+  padding: 0 0 0 1.2rem;
+  margin: 0;
+  font-size: 1.07rem;
+  line-height: 1.79rem;
+  color: #959595;
+  margin-bottom: 2.5rem; }
+
+.card__pricetag {
+  position: absolute;
+  left: 0;
+  bottom: -1.8rem;
+  font-size: 1.29rem;
+  font-family: 'Yeseva One', cursive;
+  text-transform: uppercase;
+  background-color: #E3B873;
+  color: #fff;
+  padding: 1.214rem 2.6rem; }
+
+@media screen and (max-width: 1026px) {
+  .row {
+    flex-direction: column;
+    align-items: center; }
+  .types {
+    padding: 0; }
+    .types__card {
+      margin-bottom: 5rem; }
+  .card__text {
+    margin-left: 0; } }
 
 @media screen and (max-width: 1280px) {
   html {
