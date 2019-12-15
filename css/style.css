@@ -319,9 +319,12 @@ img {
 .section {
   padding: 60px 50px; }
   .section-title {
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Yeseva One', cursive; }
+    text-align: center; }
+    .section-title__heading {
+      font-family: 'Yeseva One', cursive;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase; }
     .section-title__image {
       display: flex;
       justify-content: center;
@@ -333,6 +336,12 @@ img {
         background-color: #E3B873;
         margin-left: 7px;
         margin-right: 7px; }
+    .section-title__description {
+      margin: auto;
+      margin-top: 1.64rem;
+      font-size: 1.07rem;
+      line-height: 135%;
+      max-width: 21.9rem; }
 
 @font-face {
   font-family: 'Futura Book';
@@ -546,6 +555,8 @@ img {
 
 .card__title {
   font-family: 'Yeseva One', cursive;
+  font-style: normal;
+  font-weight: normal;
   font-size: 1.29rem;
   margin-top: 0;
   margin-bottom: 0.7rem; }
@@ -567,7 +578,9 @@ img {
   text-transform: uppercase;
   background-color: #E3B873;
   color: #fff;
-  padding: 1.214rem 2.6rem; }
+  padding: 1.214rem 2.6rem;
+  box-shadow: 0 5px 15px rgba(227, 184, 115, 0.2);
+  transition: box-shadow 0.4s; }
 
 @media screen and (max-width: 1026px) {
   .row {
@@ -637,3 +650,19 @@ img {
 @media screen and (max-height: 550px) {
   .hero__scroll-down {
     display: none; } }
+
+.design {
+  padding-right: 0;
+  padding-left: 0;
+  background-color: #131313; }
+  .design__section-title {
+    color: #fff;
+    margin-bottom: 2.78rem; }
+  .design__card {
+    margin-bottom: 5.7rem; }
+
+@media screen and (min-width: 1026px) {
+  .design {
+    background-color: #fff; }
+    .design__section-title {
+      color: #131313; } }
