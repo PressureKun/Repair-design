@@ -15,7 +15,16 @@
     left: 0
     width: 100%
     height: 100%
-    background-color: rgba($dark, 0.7)   
+    background-color: rgba($dark, 0.7)
+  &::after
+    content: ''
+    position: absolute
+    width: 100%
+    bottom: 0
+    left: 0
+    right: 0
+    height: 3.46rem
+    background-color: $dark
   &__button-box
     margin-top: 3.5rem
     display: flex   
@@ -44,12 +53,13 @@
     max-width: 80px
     height: 100%
   &__scroll-down
+    z-index: 3
     position: absolute
     display: flex
     justify-content: center
     align-items: center
     left: 0
-    bottom: -2.2rem
+    bottom: 0
     min-width: 247px
     min-height: 97px
     background-color: $dark
