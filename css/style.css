@@ -431,7 +431,7 @@ img {
   .button--primary {
     background-color: #E3B873;
     color: #fff;
-    box-shadow: 0 5px 15px rgba(227, 184, 115, 0.2);
+    box-shadow: 0 5px 15px rgba(227, 184, 115, 0.4);
     transition: box-shadow 0.4s; }
     .button--primary:hover {
       box-shadow: none; }
@@ -517,6 +517,12 @@ img {
   padding: 1.214rem 2.6rem;
   box-shadow: 0 5px 15px rgba(227, 184, 115, 0.2);
   transition: box-shadow 0.4s; }
+
+label.invalid {
+  color: tomato; }
+
+input.invalid {
+  border-bottom: 1px solid tomato; }
 
 .header {
   display: flex;
@@ -612,10 +618,12 @@ img {
   .modal__form {
     display: flex;
     flex-direction: column; }
-  .modal__input {
+  .modal__input-group {
+    display: flex;
+    flex-direction: column;
     margin-bottom: 3.428rem; }
-    .modal__input:last-of-type {
-      margin-bottom: 1rem; }
+  .modal__input:last-of-type {
+    margin-bottom: 1rem; }
   .modal__policy {
     margin-bottom: 2.7rem; }
   .modal__button {
