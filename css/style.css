@@ -383,9 +383,17 @@ img {
       margin-top: 1.64rem;
       font-size: 1.428rem;
       line-height: 135%;
-      max-width: 21.9rem; }
+      max-width: 53rem; }
       .section-title__description--team {
         max-width: 32rem; }
+      .section-title__description--client {
+        max-width: 25rem; }
+
+.round {
+  border-radius: 40px; }
+
+.price-icon {
+  margin-right: 15px; }
 
 @font-face {
   font-family: 'Futura Book';
@@ -408,7 +416,6 @@ img {
 
 .row {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between; }
 
 .col-30 {
@@ -996,6 +1003,57 @@ input.invalid {
     width: 100%;
     padding: 4.285rem 0; }
 
+.client {
+  padding-bottom: 200px; }
+  .client__section-title {
+    margin-bottom: 38px; }
+  .client-card {
+    max-width: 376px; }
+    .client-card__group {
+      max-width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px; }
+    .client-card__title {
+      margin-left: 25px;
+      font-family: 'Yeseva One', cursive;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 18px;
+      line-height: 25px; }
+    .client-card__text {
+      max-width: 324px;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 15px;
+      line-height: 180%;
+      color: #959595;
+      margin-bottom: 16px; }
+    .client-card__footer {
+      margin-left: -20px;
+      position: absolute;
+      display: flex;
+      align-items: center; }
+    .client-card__pricetag {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 17px;
+      font-family: 'Yeseva One', cursive;
+      font-style: normal;
+      font-weight: normal;
+      text-transform: uppercase;
+      background-color: #E3B873;
+      color: #fff;
+      margin-right: 2px;
+      padding: 10px 20px 10px 14px;
+      box-shadow: 0 5px 15px rgba(227, 184, 115, 0.2);
+      transition: box-shadow 0.4s;
+      margin-top: 24px; }
+    .client-card__price-text {
+      display: inline-block; }
+
 @media screen and (max-width: 1280px) {
   html {
     font-size: 12px; }
@@ -1052,7 +1110,9 @@ input.invalid {
   .button-up {
     bottom: 10px;
     right: 10px;
-    margin: 0; } }
+    margin: 0; }
+  .client {
+    display: none; } }
 
 @media screen and (max-height: 550px) {
   .hero__scroll-down {
@@ -1074,9 +1134,3 @@ input.invalid {
     background-color: #fff; }
     .design__section-title {
       color: #131313; } }
-
-@media screen and (min-width: 800px) {
-  .section-title__description {
-    max-width: 53rem; }
-    .section-title__description--team {
-      max-width: 32rem; } }
