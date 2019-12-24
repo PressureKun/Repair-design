@@ -1,8 +1,10 @@
 $(document).ready(function () {
 // переменные
   var modal = $('.modal'),
+      modalThx = $('.modal-thanks'),
       modalBtn = $('[data-toggle=modal]'),
       closeBtn = $('.modal__close');
+      closeThx = $('.modal-thanks__close');
       btn = $('#button-up');
 // функция модального окна
   modalBtn.on('click', function () {
@@ -10,8 +12,11 @@ $(document).ready(function () {
   });
   closeBtn.on('click', function () {
     modal.toggleClass('modal--visible'); 
-// функция кнопки "вверх"
   });
+    closeThx.on('click', function () {
+      modalThx.toggleClass('modal-thanks--visible'); 
+  });
+  // функция кнопки "вверх"
   $(function () {
     var element = $("#button-up"),
       display;
@@ -82,6 +87,26 @@ $(document).ready(function () {
     }
   });
 
+// Ajax отправка формы
+  $('#offer-form').on('submit', function name(event) {
+    event.preventDefault();
+    $.ajax({
+      type: "POST",
+      url: "send.php",
+      data: $(this).serialize(),
+      success: function (response) {
+        console.log('Прибыли данные: ' + response);
+        $('#offer-form')[0].reset();
+        modal.toggleClass('modal--visible');
+        // функция модального окна
+        modalThx.toggleClass('modal-thanks--visible');
+
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        console.error(jqXHR + "" + textStatus)
+      }
+    });
+  });
   // Маски
 
   $('[type=tel]').mask('+7(000) 00-00-000', {placeholder: "+7 (___) __-__-___"});

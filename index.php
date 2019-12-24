@@ -674,7 +674,7 @@
     <div class="modal__dialog">
       <button class="modal__close"></button>
       <h3 class="modal__title">Оставьте заявку и наш менеджер свяжется с вами</h3>
-      <form action="send.php" method="POST" class="form modal__form">
+      <form action="send.php" method="POST" id="offer-form" class="form modal__form">
         <div class="input-group modal__input-group"><label for="user-name"
             class="label form__label label--light">Имя</label>
           <input type="text" name='userName' class="input form__input modal__input input--light" id="user-name"
@@ -700,6 +700,17 @@
     <!-- /.modal__dialog -->
   </div>
   <!-- /.modal -->
+
+
+  <div class="modal-thanks">
+    <div class="modal-thanks__dialog">
+      <button class="modal-thanks__close"></button>
+      <h3 class="modal-thanks__title">Ваша заявка была отправлена, наш менеджер вскоре свяжется с вами.</h3>  
+      <p class="modal-thanks__text">Подписывайтесь на нашу группу "Вконтакте"!</p>   
+    </div>
+    <!-- /.modal__dialog -->
+  </div>
+  <!-- /.modal_2 -->
 
   <div class="page-up">
     <div class="page-up__dialog">
