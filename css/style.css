@@ -1470,6 +1470,7 @@ input.invalid {
       display: none; }
   .map-wrap {
     max-height: 255px;
+    max-width: 330px;
     overflow: hidden; } }
 
 @media screen and (max-height: 550px) {
