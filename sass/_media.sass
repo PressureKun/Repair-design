@@ -23,6 +23,17 @@
       margin-left: 0
 
 @media screen and (max-width: 570px)
+  .hero
+    &::after
+      display: none
+    &__title
+      line-height: 2.8rem
+      margin-top: 3rem
+    &__text
+      max-width: 320px
+      line-height: 2rem
+    &__button-box
+      margin-top: 2.5rem
   .container
    width: 100%
    padding-left: 18px
@@ -63,6 +74,161 @@
     margin: 0
   .client
     display: none
+  .swiper
+    &-slider
+      &-image
+        max-height: 202px
+        margin-top: 0
+        margin-bottom: 15px
+  .mobile-order-top
+    order: -1
+  .swiper
+  &-slide
+    display: flex
+    flex-wrap: no-wrap
+  .col-50
+    width: 100%
+  .section
+    padding-left: 0
+    padding-right: 0
+    &-title
+      &__image
+        &--control
+          margin-bottom: 40px
+      &__text
+        text-align: center
+        padding: 0 12px 0 12px
+        margin-bottom: 36px
+        margin-top: 20px
+      &__heading
+        font-size: 22px
+        &--control
+        &--projects
+          text-align: center
+      &__word
+        display: block
+        text-align: center
+        &::after
+          display: none
+  .design
+    padding-bottom: 10px
+  .projects
+    padding-top: 18px
+    padding-bottom: 10px
+  .control
+    padding-bottom: 0
+    padding-top: 23px
+    color: $light
+    background-color: $dark
+    &__form
+      // margin-bottom: -50px
+    &__section-title    
+      margin-top: 0
+    &__video
+      min-height: 207px
+      box-shadow: none
+    &__text
+      font-size: 14px
+      line-height: 2.1rem
+      &::before
+        margin-top: -28px
+        margin-bottom: 13px
+    &__label
+      color: rgba(255, 255, 255, 0.5)
+      font-size: 15px
+    &__input
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15)
+      color: $light
+      &::placeholder
+        color: $light  
+      &-group  
+        flex-basis: 100%
+        margin-bottom: 3.428rem
+        &:last-of-type
+          margin-bottom: 1rem    
+    &__button
+      padding: 1.285rem 0
+      width: 100%
+      margin-top: 50px
+      order: 3
+      margin-bottom: -20px
+    &__policy
+      margin-top: -45px
+      order: 2
+  .video
+    &__play
+      position: relative
+      margin: auto
+      max-width: 70px
+      min-height: 70px 
+  .types
+    padding-top: 50px
+  .team
+    padding-top: 10px
+    background-color: $dark
+    color: $light
+    &-card
+      min-width: 304px
+      &__image
+        width: 100%
+    &__section-footer
+      display: none
+    &__button
+      left: -150px
+      top: 38.5px
+  .row
+    &--team
+      padding-right: 0
+      padding-left: 30px
+
+  .footer
+    background: $dark
+    &__wrap
+      background-color: $dark
+      margin-top: 0
+      padding: 0
+    &__input
+      padding-top: 0.3rem
+      &-group
+        margin-bottom: 3.2rem
+        display: flex
+        flex-direction: column
+        flex-basis: 100%
+        &--full-width
+          margin-bottom: 0
+    &__policy
+      margin-bottom: 4.785rem
+    &__button
+      margin: auto
+      width: 100%
+      padding: 18px 0
+    &__container
+      display: flex
+      align-items: center
+      justify-content: space-between
+      flex-direction: column
+    &-contacts
+      order: 3
+      margin-top: 20px
+      padding: 0 10px
+      &__text
+        font-size: 18px;
+    &__map
+      order: 2
+    &__menu
+      display: none
+    
+  .map-wrap
+    max-height: 255px
+    overflow: hidden
+
+  
+
+
+
+
+
+
         
 @media screen and ( max-height: 550px )
   .hero
@@ -75,7 +241,6 @@
     flex-direction: column
     align-items: center
   .types
-    padding: 0
     &__card
       margin-bottom: 5rem
   .card
