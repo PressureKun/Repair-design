@@ -58,7 +58,7 @@ $(document).ready(function () {
 
   new WOW().init();
 
-  // Валидация формы
+  // Валидация форм
   $('.modal__form').validate({
     errorClass: "invalid", 
     rules: {
@@ -72,6 +72,9 @@ $(document).ready(function () {
       userEmail: {
         required: true,
         email: true
+      },
+      form_check: {
+        required: true
       }
     },
     messages: {
@@ -83,30 +86,144 @@ $(document).ready(function () {
       userEmail: {
         required: "Обязательно укажите ваш email адрес",
         email: "Введите в формате: name@domain.com"
+      },
+      form_check: {
+        required: "Обязательно для заполнения",
       }
+    },
+    errorPlacement: function (error, element) {
+      if (element.attr("type") == "checkbox") {
+        return element.next('label').append(error);
+      }
+
+      error.insertAfter($(element));
+    },
+    submitHandler: function(form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('сработало' + response);
+          $(form)[0].reset();
+          modal.removeClass('modal--visible');
+          modalThx.toggleClass('modal-thanks--visible');
+        }
+      });
+    }
+  });
+    
+  $('.control__form').validate({
+    errorClass: "invalid",
+    rules: {
+      // simple rule, converted to {required:true}
+      userName: {
+        required: true,
+        minlength: 2,
+      },
+      userPhone: "required",
+      // compound rule      
+      form_check: {
+        required: true,
+      }
+    },
+    messages: {
+      userName: {
+        required: "Обязательно для заполнения",
+        minlength: "Не короче двух символов",
+      },
+      userPhone: "Обязательно для заполнения",     
+      form_check: {
+        required: "Обязательно для заполнения",
+      }
+    },
+    errorPlacement: function (error, element) {
+      if (element.attr("type") == "checkbox") {
+        return element.next('label').append(error);
+      }
+
+      error.insertAfter($(element));
+    },
+    submitHandler: function (form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('сработало' + response);
+          $(form)[0].reset();
+          modal.removeClass('modal--visible');
+          modalThx.toggleClass('modal-thanks--visible');
+        }
+      });
+    }
+  });
+
+  $('.footer__form').validate({
+    errorClass: "invalid",
+    rules: {
+      // simple rule, converted to {required:true}
+      userName: {
+        required: true,
+        minlength: 2,
+      },
+      userPhone: "required",
+      // compound rule
+      form_check: {
+        required: true,
+      }
+    },
+    messages: {
+      userName: {
+        required: "Обязательно для заполнения",
+        minlength: "Не короче двух символов",
+      },
+      userPhone: "Обязательно для заполнения",
+      form_check: {
+        required: "Обязательно для заполнения",
+      }
+    },
+    errorPlacement: function (error, element) {
+      if (element.attr("type") == "checkbox") {
+        return element.next('label').append(error);
+      }
+      error.insertAfter($(element));
+    },
+    submitHandler: function (form) {
+      $.ajax({
+        type: "POST",
+        url: "send.php",
+        data: $(form).serialize(),
+        success: function (response) {
+          console.log('сработало' + response);
+          $(form)[0].reset();
+          modal.removeClass('modal--visible');
+          modalThx.toggleClass('modal-thanks--visible');
+        }
+      }); 
     }
   });
 
 // Ajax отправка формы
-  $('#offer-form').on('submit', function name(event) {
-    event.preventDefault();
-    $.ajax({
-      type: "POST",
-      url: "send.php",
-      data: $(this).serialize(),
-      success: function (response) {
-        console.log('Прибыли данные: ' + response);
-        $('#offer-form')[0].reset();
-        modal.toggleClass('modal--visible');
-        // функция модального окна
-        modalThx.toggleClass('modal-thanks--visible');
+  // $('#offer-form').on('submit', function name(event) {
+  //   event.preventDefault();
+  //   $.ajax({
+  //     type: "POST",
+  //     url: "send.php",
+  //     data: $(this).serialize(),
+  //     success: function (response) {
+  //       console.log('Прибыли данные: ' + response);
+  //       $('#offer-form')[0].reset();
+  //       modal.toggleClass('modal--visible');
+  //       // функция модального окна
+  //       modalThx.toggleClass('modal-thanks--visible');
 
-      },
-      error: function(jqXHR, textStatus, errorThrown) {
-        console.error(jqXHR + "" + textStatus)
-      }
-    });
-  });
+  //     },
+  //     error: function(jqXHR, textStatus, errorThrown) {
+  //       console.error(jqXHR + "" + textStatus)
+  //     }
+  //   });
+  // });
   // Маски
 
   $('[type=tel]').mask('+7(000) 00-00-000', {placeholder: "+7 (___) __-__-___"});

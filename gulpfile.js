@@ -63,7 +63,7 @@ function php(done) {
   src('**.php')
     .pipe(dest('dist/'));
   src('PHPMailer/**/**')
-    .pipe(dest('dist/phpmailer/'));
+    .pipe(dest('dist/PHPMailer/'));
   done();
 
 }

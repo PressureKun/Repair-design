@@ -12,10 +12,14 @@
   &--primary
     background-color: $primary
     color: $light
-    box-shadow: 0 5px 15px rgba($primary, 0.4)
+    box-shadow: 0 5px 15px rgba($primary, 0.7)
     transition: box-shadow 0.4s
+    &:active, &:focus      
+      outline: none
     &:hover
+      background-color: $primary-hover
       box-shadow: none
+
       
   &--outline
     border: 1px solid #FFFFFF
@@ -42,14 +46,8 @@
     &::placeholder
       color: $dark
 .policy
-  &__checkbox
-    opacity: 0
-    visibility: hidden
-    &:checked +
-      .policy__label
-        &::before
-          background: $primary url('../img/check.svg') center no-repeat / 0.9rem               
   &__label
+    margin-top: -5px
     font-size: 1.142rem
     display: flex
     align-items: center
@@ -60,8 +58,19 @@
       border: 1px solid $primary
       border-radius: 2px
       margin-right: 0.64rem
+      background: transparent
     &--center
       justify-content: center
+  &__checkbox
+    opacity: 0
+    visibility: hidden
+    &:checked +
+      .policy
+        &__label
+          &::before
+            background: $primary url('../img/check.svg') center no-repeat
+
+            
 
 .card
   &__text
@@ -73,12 +82,13 @@
     box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.03)
     max-width: 20.6rem
   &__title
-     font-family: 'Yeseva One', cursive
-     font-style: normal
-     font-weight: normal
-     font-size: 1.29rem
-     margin-top: 0
-     margin-bottom: 0.7rem
+    color: $title
+    font-family: 'Yeseva One', cursive
+    font-style: normal
+    font-weight: normal
+    font-size: 1.29rem
+    margin-top: 0
+    margin-bottom: 0.7rem
   &__list
     padding: 0 0 0 1.2rem
     margin: 0
@@ -92,6 +102,8 @@
     bottom: -1.8rem
     font-size: 1.29rem
     font-family: 'Yeseva One', cursive
+    font-style: normal;
+    font-weight: normal;
     text-transform: uppercase
     background-color: $primary
     color: $light

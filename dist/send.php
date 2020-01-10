@@ -22,7 +22,7 @@ try {
     $mail->Password   = 'trisser1';                               // SMTP password
     $mail->SMTPSecure = 'ssl';         // Enable TLS encryption; `PHPMailer::ENCRYPTION_SMTPS` also accepted
     $mail->Port       = 465;                                    // TCP port to connect to
-
+    $mail->CharSet = 'utf-8';
     //Recipients
     $mail->setFrom('repairdesigne@gmail.com', 'Сергей');
     $mail->addAddress('pressurekun@gmail.com', 'Joe User');     // Add a recipient
@@ -30,10 +30,14 @@ try {
     // Content
     $mail->isHTML(true);                                  // Set email format to HTML
     $mail->Subject = 'Новая заявка с сайта';
-    $mail->Body    = "Имя пользователя: ${userName}, номер его телефона: ${userName}. Его почта: ${userEmail}";
+    $mail->Body    = "Имя пользователя: ${userName}, номер его телефона: ${userPhone}. Его почта: ${userEmail}";
 
-    $mail->send();
-    echo "Форма успешно отправлена";
+    if ($mail->send()) {
+        echo "ok";
+    } else {
+        echo "Ошибка";
+    }
+    
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

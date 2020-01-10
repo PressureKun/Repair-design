@@ -350,7 +350,10 @@ img {
       font-style: normal;
       font-weight: normal;
       text-transform: uppercase;
-      line-height: 138%; }
+      line-height: 138%;
+      color: #181818; }
+      .section-title__heading--control {
+        color: #fff; }
       .section-title__heading--projects {
         font-size: 1.93rem; }
       .section-title__heading--primary {
@@ -454,10 +457,13 @@ img {
   .button--primary {
     background-color: #E3B873;
     color: #fff;
-    box-shadow: 0 5px 15px rgba(227, 184, 115, 0.4);
+    box-shadow: 0 5px 15px rgba(227, 184, 115, 0.7);
     -webkit-transition: box-shadow 0.4s;
     transition: box-shadow 0.4s; }
+    .button--primary:active, .button--primary:focus {
+      outline: none; }
     .button--primary:hover {
+      background-color: #cfa259;
       box-shadow: none; }
   .button--outline {
     border: 1px solid #FFFFFF;
@@ -500,13 +506,8 @@ img {
     .input--dark::placeholder {
       color: #131313; }
 
-.policy__checkbox {
-  opacity: 0;
-  visibility: hidden; }
-  .policy__checkbox:checked + .policy__label::before {
-    background: #E3B873 url("../img/check.svg") center no-repeat/0.9rem; }
-
 .policy__label {
+  margin-top: -5px;
   font-size: 1.142rem;
   display: -webkit-box;
   display: flex;
@@ -518,10 +519,17 @@ img {
     height: 18px;
     border: 1px solid #E3B873;
     border-radius: 2px;
-    margin-right: 0.64rem; }
+    margin-right: 0.64rem;
+    background: transparent; }
   .policy__label--center {
     -webkit-box-pack: center;
     justify-content: center; }
+
+.policy__checkbox {
+  opacity: 0;
+  visibility: hidden; }
+  .policy__checkbox:checked + .policy__label::before {
+    background: #E3B873 url("../img/check.svg") center no-repeat; }
 
 .card__text {
   position: relative;
@@ -533,6 +541,7 @@ img {
   max-width: 20.6rem; }
 
 .card__title {
+  color: #363636;
   font-family: 'Yeseva One', cursive;
   font-style: normal;
   font-weight: normal;
@@ -554,6 +563,8 @@ img {
   bottom: -1.8rem;
   font-size: 1.29rem;
   font-family: 'Yeseva One', cursive;
+  font-style: normal;
+  font-weight: normal;
   text-transform: uppercase;
   background-color: #E3B873;
   color: #fff;
@@ -593,14 +604,21 @@ input.invalid {
   -webkit-box-pack: justify;
   justify-content: space-between;
   -webkit-box-align: center;
-  align-items: center; }
+  align-items: center;
+  flex-wrap: no-wrap; }
 
 .logo {
   color: #E3B873;
   text-transform: uppercase;
   font-size: 1.075rem; }
+  .logo__link {
+    text-decoration: none;
+    color: #E3B873; }
+    .logo__link:active {
+      outline: none; }
 
 .nav {
+  display: block;
   margin-left: 16px; }
   .nav__link {
     text-decoration: none;
@@ -681,7 +699,7 @@ input.invalid {
     flex-direction: column;
     margin-bottom: 3.428rem; }
   .modal__policy {
-    margin-top: -55px;
+    margin-top: -35px;
     margin-bottom: 2.7rem; }
   .modal__button {
     align-self: flex-end;
@@ -960,13 +978,13 @@ input.invalid {
   margin: 30px;
   position: fixed;
   bottom: 30px;
-  right: 30px;
+  right: 5px;
   -webkit-transition: background-color .3s;
   transition: background-color .3s;
   z-index: 1000; }
   .button-up:hover {
     cursor: pointer;
-    background-color: #131313; }
+    background-color: #cfa259; }
   .button-up:active {
     background-color: #555; }
   .button-up::after {
@@ -1100,9 +1118,16 @@ input.invalid {
     width: 100%;
     height: 100%;
     background-color: rgba(19, 19, 19, 0.85); }
+  .footer__container {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 80px;
+    padding-right: 103px;
+    width: 100%;
+    max-width: 100%; }
   .footer__wrap {
     position: relative;
-    background-color: #181818;
+    background: #181818 url("../img/footer_wrap_bg.svg") no-repeat center;
     max-width: 63.07rem;
     margin: auto;
     margin-top: -19rem;
@@ -1152,7 +1177,7 @@ input.invalid {
   .footer__map {
     margin: auto;
     margin-bottom: 5rem;
-    min-width: 330px;
+    min-width: 318px;
     max-width: 63rem; }
   .footer-contacts {
     display: -webkit-box;
@@ -1182,6 +1207,13 @@ input.invalid {
       justify-content: space-between;
       min-width: 71px;
       margin: auto; }
+      .footer-contacts__icons:active, .footer-contacts__icons:focus {
+        outline: none; }
+    .footer-contacts__phone {
+      text-decoration: none;
+      color: #E3B873; }
+    .footer-contacts__button {
+      padding: 11px 22px; }
 
 .client {
   padding-top: 1.428rem;
@@ -1189,6 +1221,7 @@ input.invalid {
   .client__section-title {
     margin-bottom: 2.714rem; }
   .client-card {
+    box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.15);
     display: block;
     max-width: 376px; }
     .client-card__group {
@@ -1201,6 +1234,8 @@ input.invalid {
       justify-content: space-between;
       margin-bottom: 0.857rem; }
     .client-card__title {
+      margin-top: 0;
+      margin-bottom: 0;
       margin-left: 1.786rem;
       font-family: 'Yeseva One', cursive;
       font-style: normal;
@@ -1245,17 +1280,48 @@ input.invalid {
     .client-card__price-text {
       display: inline-block; }
 
+@media screen and (max-width: 1340px) {
+  .team__button {
+    display: none; } }
+
 @media screen and (max-width: 1280px) {
   html {
     font-size: 12px; }
   __link {
-    margin-right: 1rem; } }
+    margin-right: 1rem; }
+  .client-card__footer {
+    margin-top: -20px;
+    margin-bottom: 20px; }
+  .client-card__pricetag {
+    padding: 7px 15px 7px 10px;
+    font-size: 14px; } }
 
 @media screen and (max-width: 1120px) {
-  .header__container {
-    padding-right: 24px; }
   .nav__link {
     margin-right: 2rem; } }
+
+@media screen and (max-width: 1084px) {
+  .nav__link {
+    margin-right: 1.2rem; } }
+
+@media screen and (max-width: 1040px) {
+  .nav__link {
+    margin-right: 0.9rem; }
+  .team-card {
+    margin-bottom: 20px; }
+  .client-card {
+    margin-bottom: 90px; }
+  .button-up {
+    width: 30px;
+    height: 30px; }
+    .button-up::after {
+      content: "\f077";
+      font-family: FontAwesome;
+      font-weight: normal;
+      font-style: normal;
+      font-size: 1rem;
+      line-height: 30px;
+      color: #fff; } }
 
 @media screen and (max-width: 992px) {
   .nav {
@@ -1264,6 +1330,42 @@ input.invalid {
     display: none; }
   .hero__content {
     margin-left: 0; } }
+
+@media screen and (max-width: 710px) {
+  .control__input-group {
+    flex-basis: 100%;
+    margin-bottom: 3.428rem; }
+    .control__input-group:last-of-type {
+      margin-bottom: 1rem; }
+  .control__button {
+    padding: 1.285rem 0;
+    width: 100%;
+    margin-top: 50px;
+    -webkit-box-ordinal-group: 4;
+    order: 3;
+    margin-bottom: -20px; }
+  .control__policy {
+    margin-top: -25px;
+    -webkit-box-ordinal-group: 3;
+    order: 2; }
+    .control__policy-label {
+      -webkit-box-pack: start;
+      justify-content: flex-start; }
+  .policy__label--center {
+    -webkit-box-pack: start;
+    justify-content: flex-start; } }
+
+@media screen and (max-width: 650px) {
+  .contacts__phone {
+    margin-right: 1.42rem; } }
+
+@media screen and (max-width: 600px) {
+  .contacts__button {
+    display: none; }
+  .contacts__phone {
+    margin-right: 0;
+    color: #fff;
+    text-decoration: none; } }
 
 @media screen and (max-width: 570px) {
   .hero::after {
@@ -1280,12 +1382,6 @@ input.invalid {
     width: 100%;
     padding-left: 18px;
     padding-right: 18px; }
-  .contacts__button {
-    display: none; }
-  .contacts__phone {
-    margin-right: 0;
-    color: #fff;
-    text-decoration: none; }
   .title {
     font-size: 1.92rem; }
   .hero {
@@ -1330,6 +1426,8 @@ input.invalid {
   .section {
     padding-left: 0;
     padding-right: 0; }
+    .section-title__description {
+      font-size: 15px; }
     .section-title__image--control {
       margin-bottom: 40px; }
     .section-title__text {
@@ -1339,6 +1437,12 @@ input.invalid {
       margin-top: 20px; }
     .section-title__heading {
       font-size: 22px; }
+      .section-title__heading--control {
+        color: #fff; }
+      .section-title__heading--design {
+        color: #fff; }
+      .section-title__heading--team {
+        color: #fff; }
       .section-title__heading--projects {
         text-align: center; }
     .section-title__word {
@@ -1410,18 +1514,13 @@ input.invalid {
     padding-top: 10px;
     background-color: #131313;
     color: #fff; }
-    .team-card {
-      min-width: 304px; }
-      .team-card__image {
-        width: 100%; }
+    .team-card__image {
+      width: 100%; }
     .team__section-footer {
       display: none; }
     .team__button {
       left: -150px;
       top: 38.5px; }
-  .row--team {
-    padding-right: 0;
-    padding-left: 30px; }
   .footer {
     background: #131313; }
     .footer__wrap {
@@ -1470,7 +1569,15 @@ input.invalid {
       display: none; }
   .map-wrap {
     max-height: 255px;
-    max-width: 330px;
+    max-width: 376px;
+    overflow: hidden; } }
+
+@media screen and (max-width: 380px) {
+  .team-card__image {
+    max-width: 220px; }
+  .map-wrap {
+    max-height: 255px;
+    max-width: 280px;
     overflow: hidden; } }
 
 @media screen and (max-height: 550px) {
