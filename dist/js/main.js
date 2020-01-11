@@ -27,14 +27,31 @@ $(document).ready(function () {
       }, 300);
     });
   });
-
+  
   btn.on('click', function (e) {
     e.preventDefault();
     $('html, body').animate({
       scrollTop: 0
     }, '300');
   });
+ // функция для якорных ссылок
+  $("#nav").on("click", "a", function (event) {
+    event.preventDefault();
+    var id = $(this).attr('href'),
+      top = $(id).offset().top;
+    $('body,html').animate({
+      scrollTop: top
+    }, 1000);
+  });
 
+  $("#nav2").on("click", "a", function (event) {
+    event.preventDefault();
+    var id = $(this).attr('href'),
+      top = $(id).offset().top;
+    $('body,html').animate({
+      scrollTop: top
+    }, 1000);
+  });
   //initialize swiper when document ready
   var mySwiper = new Swiper('.swiper-container', {
     // Optional parameters
@@ -77,6 +94,8 @@ $(document).ready(function () {
         required: true
       }
     },
+    // errorElement: "em",
+    // errorClass: "invalid",
     messages: {
       userName: {
         required: "Обязательно для заполнения",
@@ -90,6 +109,13 @@ $(document).ready(function () {
       form_check: {
         required: "Обязательно для заполнения",
       }
+    },
+    errorPlacement: function (error, element) {
+      if (element.attr("type") == "checkbox") {
+        return element.next('label').append(error);
+      }
+
+      error.insertAfter($(element));
     },
     submitHandler: function(form) {
       $.ajax({
@@ -116,6 +142,9 @@ $(document).ready(function () {
       },
       userPhone: "required",
       // compound rule      
+      form_check: {
+        required: true,
+      }
     },
     messages: {
       userName: {
@@ -123,6 +152,16 @@ $(document).ready(function () {
         minlength: "Не короче двух символов",
       },
       userPhone: "Обязательно для заполнения",     
+      form_check: {
+        required: "Обязательно для заполнения",
+      }
+    },
+    errorPlacement: function (error, element) {
+      if (element.attr("type") == "checkbox") {
+        return element.next('label').append(error);
+      }
+
+      error.insertAfter($(element));
     },
     submitHandler: function (form) {
       $.ajax({
@@ -149,6 +188,9 @@ $(document).ready(function () {
       },
       userPhone: "required",
       // compound rule
+      form_check: {
+        required: true,
+      }
     },
     messages: {
       userName: {
@@ -156,6 +198,15 @@ $(document).ready(function () {
         minlength: "Не короче двух символов",
       },
       userPhone: "Обязательно для заполнения",
+      form_check: {
+        required: "Обязательно для заполнения",
+      }
+    },
+    errorPlacement: function (error, element) {
+      if (element.attr("type") == "checkbox") {
+        return element.next('label').append(error);
+      }
+      error.insertAfter($(element));
     },
     submitHandler: function (form) {
       $.ajax({
@@ -195,5 +246,22 @@ $(document).ready(function () {
   // Маски
 
   $('[type=tel]').mask('+7(000) 00-00-000', {placeholder: "+7 (___) __-__-___"});
+  var player;
+  $('.video__play').on('click', function onYouTubeIframeAPIReady() {
+    player = new YT.Player('player', {
+      height: '460',
+      width: '100%',
+      videoId: 'cu_l1JNB5ds',
+      events: {
+        'onReady': videoPlay,
+
+      }
+    });
+  })
+
+  function videoPlay(event) {
+    event.target.playVideo();
+    
+  }
 
 });

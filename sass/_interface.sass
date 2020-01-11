@@ -12,7 +12,7 @@
   &--primary
     background-color: $primary
     color: $light
-    box-shadow: 0 5px 15px rgba($primary, 0.7)
+    box-shadow: 0 5px 10px rgba($primary, 0.5)
     transition: box-shadow 0.4s
     &:active, &:focus      
       outline: none
@@ -113,9 +113,22 @@
 label
   &.invalid
     color: tomato
+    position: absolute
+    margin-top: 53px
+
 input
+  &-group
+    position: relative  
   &.invalid
     border-bottom: 1px solid tomato
 
 
+#form_check-error
+  margin-top: 20px
+  position: absolute
 
+
+#control-user-name-error
+  margin-top: 44px
+#control-user-phone-error
+  margin-top: 44px

@@ -8,7 +8,7 @@
     font-size: 12px
   .nav
   &__link
-    margin-right: 1rem
+    margin-right: 0.6rem
   .client
     &-card
       &__footer
@@ -17,14 +17,42 @@
       &__pricetag
         padding: 7px 15px 7px 10px
         font-size: 14px;
+  .contacts
+    &__phone
+      margin-right: 20px
+  #footer-user-name-error
+    margin-top: 42px
+  #footer-user-phone-error
+    margin-top: 42px
+  #modal-user-name-error
+    margin-top: 44px
+  #modal-user-phone-error
+    margin-top: 44px
+  #modal-user-email-error
+    margin-top: 44px
 
+@media screen and (max-width: 1196px)
+  .swiper
+    &-slider
+      &-image        
+        // max-height: 202px
+        margin-top: 0
+        margin-bottom: 15px
+  .mobile-order-top
+    order: -1
+  .swiper
+    &-slide
+      display: flex
+      flex-wrap: no-wrap
+  .col-50
+    width: 100%
 @media screen and (max-width: 1120px)
   .header
     &__container
       // padding-right: 24px
   .nav
     &__link
-      margin-right: 2rem
+      margin-right: 0.6rem
 @media screen and (max-width: 1084px)
   .nav
     &__link
@@ -60,6 +88,24 @@
       display: none
     &__content
       margin-left: 0
+  .button
+    &:hover
+      cursor: default
+    &--primary
+      &:hover
+        background-color: $primary
+        box-shadow: 0 5px 10px rgba($primary, 0.5)
+  .video
+    &__play
+      &:hover
+        transform: none
+  .button-up
+    &:hover
+      background-color: $primary
+      cursor: default
+  
+  // *:hover
+  //   display: none
 
 @media screen and (max-width: 710px)
   .control
@@ -103,7 +149,7 @@
       text-decoration: none
 
 
-@media screen and (max-width: 570px)
+@media screen and (max-width: 510px)
   .hero
     &::after
       display: none
@@ -129,8 +175,7 @@
     &__text
       font-size: 1.5rem
     &__button-box
-      flex-wrap: wrap
-      
+      flex-wrap: wrap      
     &__button_1
       display: block
       min-width: 100%
@@ -151,9 +196,9 @@
   .swiper
     &-slider
       &-image
-        max-height: 202px
+        // max-height: 202px
         margin-top: 0
-        margin-bottom: 15px
+        margin-bottom: 50px
   .mobile-order-top
     order: -1
   .swiper
@@ -234,7 +279,7 @@
       order: 3
       margin-bottom: -20px
     &__policy
-      margin-top: -45px
+
       order: 2
   .video
     &__play
@@ -245,6 +290,7 @@
   .types
     padding-top: 50px
   .team
+    padding-bottom: 3rem
     padding-top: 10px
     background-color: $dark
     color: $light
@@ -261,6 +307,7 @@
   .footer
     background: $dark
     &__wrap
+      background: none
       background-color: $dark
       margin-top: 0
       padding: 0
@@ -301,11 +348,15 @@
 
 
 
+
 @media screen and (max-width: 380px)
+  .projects
+    padding-left: 20px !important
+    padding-right: 20px !important
   .team
     &-card
       &__image
-        max-width: 220px
+        max-width: 280px
   .map-wrap
     max-height: 255px
     max-width: 280px
@@ -325,6 +376,10 @@
       display: none
 
 
+@media screen and (max-width: 1194px)
+  .row__project
+    flex-direction: column
+    align-items: center
 @media screen and (max-width: 1026px)
   .row
     flex-direction: column
@@ -336,7 +391,7 @@
     &__text
       margin-left: 0
 
-@media screen and (min-width: 1026px)
+@media screen and (min-width: 570px)
   .design
     background-color: $light
     &__section-title
